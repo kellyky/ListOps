@@ -25,6 +25,21 @@ The precise number and names of the operations to be implemented will be track d
 
 Note, the ordering in which arguments are passed to the fold functions (`foldl`, `foldr`) is significant.
 
+### Ruby-Specifics
+
+As noted above, operations vary by language.
+The Ruby track version of this exercise requires the following operations:
+
+- `arrays` (_same as `length` above_);
+- `reverser`
+- `concatter`
+- `mapper`
+- `filterer`
+- `sum_reducer` (_given a list, return the sum of its elements_);
+- `factorial_reducer` (_given a list and initial accumulator, return the product of its elements_).
+
+(This section added by me, for reference only, on my personal repository.)
+
 ## Source
 
 ### Created by
