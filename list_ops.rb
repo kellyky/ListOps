@@ -1,40 +1,48 @@
 class ListOps
 
-  def self.arrays(array)
-    array.length
-  end
-
-  def self.reverser(array)
-    array.reverse
-  end
-
-  def self.concatter(*arrays)
-    arrays.reduce([]) do |concatted_array, array|
-      concatted_array + array
+  class << self
+    def arrays(array)
+      count = 0
+      array.each { |_| count += 1 }
+      count
     end
-  end
 
-  def self.mapper(array)
-    array.each_with_object([]) do |element, mapped|
-      mapped << yield(element)
+    def reverser(array)
+      reversed_array = []
+      until array.length.zero?
+        reversed_array << array.pop
+      end
+      reversed_array
     end
-  end
 
-  def self.filterer(array)
-    array.each_with_object([]) do |element, filtered|
-      filtered << element if yield(element)
+    def concatter(*arrays)
+      arrays.reduce([]) do |concatted_array, array|
+        concatted_array + array
+      end
     end
-  end
 
-  def self.sum_reducer(array)
-    array.reduce(0) do |sum, element|
-      sum + element
+    def mapper(array)
+      array.each_with_object([]) do |element, mapped|
+        mapped << yield(element)
+      end
     end
-  end
 
-  def self.factorial_reducer(array)
-    array.reduce(1) do |sum, element|
-      sum * element
+    def filterer(array)
+      array.each_with_object([]) do |element, filtered|
+        filtered << element if yield(element)
+      end
+    end
+
+    def sum_reducer(array)
+      array.reduce(0) do |sum, element|
+        sum + element
+      end
+    end
+
+    def factorial_reducer(array)
+      array.reduce(1) do |sum, element|
+        sum * element
+      end
     end
   end
 
